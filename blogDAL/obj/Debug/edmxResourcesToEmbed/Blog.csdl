@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BlogModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="CommentId" />
+    </Key>
+    <Property Name="CommentId" Type="Int32" Nullable="false" />
+    <Property Name="CommentContent" Type="String" MaxLength="140" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CommentDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PostId" Type="Int32" Nullable="false" />
+    <Property Name="RowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Post" Relationship="Self.FK_Comments_Posts" FromRole="Comments" ToRole="Posts" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="PostId" />
+    </Key>
+    <Property Name="PostId" Type="Int32" Nullable="false" />
+    <Property Name="PostTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PostContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PostDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Comment" Relationship="Self.FK_Comments_Posts" FromRole="Posts" ToRole="Comments" />
+  </EntityType>
+  <Association Name="FK_Comments_Posts">
+    <End Role="Posts" Type="Self.Post" Multiplicity="1" />
+    <End Role="Comments" Type="Self.Comment" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Posts">
+        <PropertyRef Name="PostId" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="CommentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BlogEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Comments" EntityType="Self.Comment" />
+    <EntitySet Name="Posts" EntityType="Self.Post" />
+    <AssociationSet Name="FK_Comments_Posts" Association="Self.FK_Comments_Posts">
+      <End Role="Posts" EntitySet="Posts" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BlogModelStoreContainer" CdmEntityContainer="BlogEntities">
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="BlogModel.Comment">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="CommentContent" ColumnName="CommentContent" />
+          <ScalarProperty Name="CommentDateTime" ColumnName="CommentDateTime" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="BlogModel.Post">
+        <MappingFragment StoreEntitySet="Posts">
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="PostTitle" ColumnName="PostTitle" />
+          <ScalarProperty Name="PostContent" ColumnName="PostContent" />
+          <ScalarProperty Name="PostDateTime" ColumnName="PostDateTime" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
