@@ -1,0 +1,9 @@
+C:\VisualStudioProjects\LINQblog\BlogBDO\bin\Debug\BlogBDO.dll
+C:\VisualStudioProjects\LINQblog\BlogBDO\bin\Debug\BlogBDO.pdb
+C:\VisualStudioProjects\LINQblog\BlogBDO\obj\Debug\BlogBDO.csprojResolveAssemblyReference.cache
+C:\VisualStudioProjects\LINQblog\BlogBDO\obj\Debug\BlogBDO.dll
+C:\VisualStudioProjects\LINQblog\BlogBDO\obj\Debug\BlogBDO.pdb
+C:\VisualStudioProjects\RestBlog\BlogBDO\bin\Debug\BlogBDO.dll
+C:\VisualStudioProjects\RestBlog\BlogBDO\bin\Debug\BlogBDO.pdb
+C:\VisualStudioProjects\RestBlog\BlogBDO\obj\Debug\BlogBDO.dll
+C:\VisualStudioProjects\RestBlog\BlogBDO\obj\Debug\BlogBDO.pdb
